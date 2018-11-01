@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>SQL INJECTION</title>
+</head>
+<body>
+<h2>This is normal form:</h2>
+<form th:action="@{/confidential}" method="get">
+    <p>User id: <input th:type="text" name="id" th:value="${id}"></p>
+    <p><input type="submit" value="Submit" />
+</form>
+
+<h2>This is form with injection vulnerability</h2>
+<form th:action="@{/confidential_injected}" method="get">
+    <p>User id: <input th:type="text" name="id" th:value="${id}"></p>
+    <p><input type="submit" value="Submit" />
+</form>
+
+</body>
+</html>

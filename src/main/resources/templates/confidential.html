@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<ul>
+    <li th:each="confidential : ${confidentialList}">
+        <p th:text="'Hello, ' + ${confidential.name} + '!'" /><p th:text="'I know one fact about you: '"/><b th:text="${confidential.confidentialInfo}"/><p th:text="'How do you feel about dat?'"/>
+    </li>
+</ul>
+</body>
+</html>
