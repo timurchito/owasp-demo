@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.epam.teemo.entity.Book;
 
 
-@Controller("/rest/books")
+@Controller("/books")
 public class XXEController
 {
 

@@ -18,14 +18,14 @@ import com.epam.teemo.entity.Confidential;
 import com.epam.teemo.service.ConfidentialService;
 
 
-@Controller("/serialization")
+@Controller()
 public class SerializationController
 {
 
 	@Autowired
 	private ConfidentialService confidentialService;
 
-	@RequestMapping(params = "confId", method = RequestMethod.GET)
+	@RequestMapping(value = "/serialization", params = "confId", method = RequestMethod.GET)
 	public @ResponseBody
 	byte[] serialize(@RequestParam("confId") String confId) throws IOException
 	{
@@ -37,7 +37,7 @@ public class SerializationController
 		return byteArrayOutputStream.toByteArray();
 	}
 
-	@RequestMapping(method = RequestMethod.POST)
+	@RequestMapping(value = "/serialization", method = RequestMethod.POST)
 	public void deserialize(@RequestBody byte[] input) throws IOException, ClassNotFoundException
 	{
 		ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(input);
